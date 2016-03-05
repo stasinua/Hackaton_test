@@ -1,0 +1,18 @@
+<div class="jumbotron text-center">
+  <h1>Welcome to Rate Machine</h1>
+
+  <div ng-if="!main.loggedIn">
+		<p>Login to Rate your products.</p>
+		<a href="/login" class="btn btn-primary">Login</a>
+	</div>
+
+  <div ng-if="!main.loggedIn">
+		<p>Register to Rate your products.</p>
+		<a href="/register" class="btn btn-primary">Register</a>
+	</div>
+
+	<div ng-if="main.loggedIn">
+		<p>Rate your products.</p>
+		<a href="/products" class="btn btn-primary">Rate products</a>
+	</div>
+</div>

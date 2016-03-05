@@ -1,0 +1,41 @@
+<div class="row col-sm-6 col-sm-offset-3">
+  <div class="jumbotron">
+    <h1>Регистрация</h1>
+
+    <form name="regForm" ng-submit="register.doRegister()">
+
+      <!-- NAME INPUT -->
+      <div class="form-group" ng-class="{ 'has-error' : regForm.name.$invalid }">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" ng-model="register.registerData.name" ng-minlength="2">
+        <p class="help-block" ng-show="regForm.name.$error.minlength">Min username length is 2 characters.</p>
+      </div>
+
+      <!-- USERNAME INPUT -->
+      <div class="form-group" ng-class="{ 'has-error' : regForm.username.$invalid }">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control" ng-model="register.registerData.username" ng-minlength="5">
+        <p class="help-block" ng-show="regForm.username.$error.minlength">Min username length is 5 characters.</p>
+      </div>
+
+      <!-- PASSWORD INPUT -->
+      <div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid }">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" ng-model="register.registerData.password" ng-minlength="8">
+        <p class="help-block" ng-show="regForm.password.$error.minlength">Min password length is 8 characters.</p>
+      </div>
+
+      <div class="alert alert-danger" ng-if="register.error">
+        {{ register.error }}
+      </div>
+      <!-- LOGIN BUTTON -->
+      <button type="submit" class="btn btn-block btn-primary" ng-disabled="!register.registerData.password || !register.registerData.username">
+        <span ng-if="!register.processing">Register</span>
+        <span ng-if="register.processing" class="spinner">
+          <span class="glyphicon glyphicon-repeat"></span>
+        </span>
+      </button>
+    </form>
+  </div>
+
+</div>

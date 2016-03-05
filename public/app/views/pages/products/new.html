@@ -1,0 +1,44 @@
+<div class="row col-sm-6 col-sm-offset-3">
+  <div class="jumbotron">
+    <h2>Add new product</h2>
+
+    <form name="regForm" ng-submit="product.addProduct()">
+
+      <!-- TITLE INPUT -->
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" ng-model="product.productData.title">
+      </div>
+
+      <!-- DESCRIPTION INPUT -->
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="description" class="form-control" ng-model="product.productData.description">
+      </div>
+
+      <!-- IMGSRC INPUT -->
+      <div class="form-group">
+        <label>Image source</label>
+        <input type="text" name="imgsrc" class="form-control" ng-model="product.productData.imgsrc">
+      </div>
+
+      <!-- PRICE INPUT -->
+      <div class="form-group">
+        <label>Price</label>
+        <input type="text" name="description" class="form-control" ng-model="product.productData.price">
+      </div>
+
+      <div class="alert alert-danger" ng-if="product.error">
+        {{ product.error }}
+      </div>
+      <!-- ADD BUTTON -->
+      <button type="submit" class="btn btn-block btn-primary">
+        <span ng-if="!product.processing">Add Product</span>
+        <span ng-if="product.processing" class="spinner">
+          <span class="glyphicon glyphicon-repeat"></span>
+        </span>
+      </button>
+    </form>
+  </div>
+
+</div>

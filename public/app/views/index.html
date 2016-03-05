@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Rate Machine</title>
+
+    <!-- FOR ANGULAR ROUTING -->
+    <base href="/">
+
+    <!-- CSS  -->
+    <!-- load bootstrap from CDN and custom CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/products.css">
+
+    <!-- JS -->
+    <!-- load angular and angular-route via CDN -->
+    <script src="/app/angular/angular.min.js"></script>
+    <script src="/app/angular-route/angular-route.js"></script>
+    <script src="/app/angular-animate/angular-animate.js"></script>
+
+    <!-- controllers -->
+    <script src="/app/controllers/mainCtrl.js"></script>
+    <script src="/app/controllers/productCtrl.js"></script>
+
+    <!-- services -->
+    <script src="/app/services/authService.js"></script>
+    <script src="/app/services/productService.js"></script>
+
+    <!-- main Angular app files -->
+    <script src="/app/app.routes.js"></script>
+    <script src="/app/app.js"></script>
+  </head>
+  <body ng-app="userApp" ng-controller="mainController as main">
+
+    <header>
+    	<div class="navbar navbar-inverse" ng-if="main.loggedIn">
+    	<div class="container">
+    		<div class="navbar-header">
+    			<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-fire text-danger"></span> Rate Machine</a>
+    		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+            </div>
+            <div id="menu" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+            			<li><a href="/products"><span></span>Products</a></li>
+            		</ul>
+                    <ul class="nav navbar-nav">
+            			<li><a href="/newproduct"><span></span>Add product</a></li>
+            		</ul>
+            		<ul class="nav navbar-nav navbar-right">
+            			<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+                        <li ng-if="!main.loggedIn"><a href="/register">Register</a></li>
+            			<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+            		</ul>
+            </div>
+    	</div>
+    	</div>
+    </header>
+    <div class="cart">
+      <!-- CART SECTION  -->
+      <ul class="nav navbar-nav">
+        <li><button ng-click="main.openCart()"><span></span>Update cart</button></li>
+        <li ng-repeat="cartProduct in main.cartProducts track by $index">
+          <div>{{cartProduct.title}}</div>
+          </br>
+          <!-- <li><img ng-src="/assets/img/{{ cartProduct.imgsrc }}"/></li> -->
+          <div>{{cartProduct.price}}</div>
+          <button ng-click="main.removeFromCart(this.$index); main.openCart()"><span></span>remove item</button>
+          </br>
+        </li>
+        <li>Current Total: {{main.totalSum}}</li>
+        <!-- SUBMIT/REJECT CART -->
+        <button ng-if="main.cartIsFilled" ng-click="main.submitCart();"><span></span>Submit cart</button>
+        <button ng-click="main.rejectCart();"><span></span>Reject cart</button>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+        <li ng-if="!main.loggedIn"><a href="/register">Register</a></li>
+        <li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+      </ul>
+    </div>
+
+    <main class="container">
+      	<div ng-view></div>
+    </main>
+
+  </body>
+</html>
