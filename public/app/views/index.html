@@ -66,16 +66,15 @@
       <!-- CART SECTION  -->
       <div class="nav navbar-nav">
             <li ng-repeat="cartProduct in main.cartProducts track by $index">
-                <button style="background: #ffffff; border: 0px; margin-right:10px; margin-left:10px;" ng-click="main.openCart()"><span class="glyphicon glyphicon-refresh"></span ></button>
-        
-                <div> <img style="border="0" height="20" width="20"" ng-src="/assets/img/{{ cartProduct.imgsrc }}.jpg"/> {{cartProduct.title}} - {{cartProduct.price}}</div>
-                <button style="background: #ffffff; border: 0px; " ng-click="main.removeFromCart(this.$index); main.openCart()"><span class="glyphicon glyphicon-remove"></span></button>
-                    
-        <!-- SUBMIT/REJECT CART -->
-                    <button ng-if="main.cartIsFilled" ng-click="main.submitCart();"><span></span>Submit cart</button>
-                    <button  style="background: #ffffff; border: 0px;margin-right:10px; margin-left:10px; "ng-click="main.rejectCart();"><span class="glyphicon glyphicon-eject"></span></button>
-                    
-            </li><div>Current Total: {{main.totalSum}}</div>
+                <div> <img style="border="0" height="20" width="20"" ng-src="/assets/img/{{ cartProduct.imgsrc }}.jpg"/> {{cartProduct.title}} - {{cartProduct.price}}
+                <button style="background: #ffffff; border: 0px; margin-right: 20px; " ng-click="main.removeFromCart(this.$index); main.openCart()"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+                <button ng-if="main.cartIsFilled" ng-click="main.submitCart();"><span></span>Submit cart</button>   
+            </li>
+            <div style="padding: 10px;">
+            <button style="background: #ffffff; border: 0px; margin-right:10px; margin-left:10px;" ng-click="main.openCart()"><span class="glyphicon glyphicon-refresh"></span ></button>Current Total: {{main.totalSum}}
+            <button  style="background: #ffffff; border: 0px; margin-right:10px; margin-left:10px; "ng-click="main.rejectCart();"><span class="glyphicon glyphicon-eject"></span></button>
+            </div>
       </div>
     </div>
 

@@ -2,7 +2,7 @@ angular.module('mainCtrl', ['productService'])
 
 .controller('mainController', function($rootScope, $location, $window, $q, Auth, Product){
   var vm = this;
-
+      
   //get info if user is logged login
   vm.loggedIn = Auth.isLoggedIn();
 
@@ -80,7 +80,11 @@ angular.module('mainCtrl', ['productService'])
   vm.rejectCart = function(){
     Product.rejectCart();
     vm.totalSum = 0;
+
+  vm.cartIsActive = false;
   };
 
 
 });
+
+ 
