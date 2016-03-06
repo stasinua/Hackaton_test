@@ -1,0 +1,79 @@
+
+  {
+    "indexhtml": {
+      "menu": {
+        "products": "Продукты",
+        "addProduct": "Добавить Продукт",
+        "register": "Регистрация",
+        "login": "Вход",
+        "logout": "Выход"
+      },
+      "cart": {
+        "updateCart": "Обновить корзину",
+        "removeItem": "Удалить продукт",
+        "submitCart": "Подтвердить заказ",
+        "rejectCart": "Отклонить заказ"
+      }
+    },
+    "homehtml": {
+      "title": "Добро пожаловать в тестовое приложение для LIKEIT2016",
+      "preLoginBtn": "Войдите чтобы купить продукты",
+      "loginBtn": "Войти",
+      "preRegisterBnt": "Зарегистрируйтесь чтобы купить продукты",
+      "registerBnt": "Зарегистрироваться",
+      "preIfLoggedInBtn": "Купите продукты",
+      "ifLoggedInBtn": "Показать продукты"
+    },
+    "registerhtml":{
+      "title": "Регистрация",
+      "name": {
+        "label": "Имя",
+        "help": "Минимальная длина поля 2 символа"
+      },
+      "username": {
+        "label": "Имя пользователя",
+        "help": "Минимальная длина поля 5 символов"
+      },
+      "password": {
+        "label": "Пароль",
+        "help": "Минимальная длина пароля 8 символов"
+      },
+      "submitBtn": "Зарегистрироваться"
+    },
+    "loginhtml":{
+      "title": "Вход",
+      "username": {
+        "label": "Имя пользователя"
+      },
+      "password": {
+        "label": "Пароль"
+      },
+      "submitBtn": "Войти"
+    },
+    "newhtml": {
+      "title": "Добавить новый продукт",
+      "productTitle": {
+        "label": "Название продукта"
+      },
+      "productDescription": {
+        "label": "Описание продукта"
+      },
+      "productImgSrc": {
+        "label": "Имя картинки без расширения"
+      },
+      "productPrice": {
+        "label": "Цена"
+      },
+      "submitBtn": "Добавить продукт"
+    },
+    "allhtml": {
+      "preProducts": {
+        "loading": "Загрузка продуктов"
+      },
+      "products":{
+        "more": "Подробнее",
+        "description": "path.to.description",
+        "buyButton": "Купить"
+      }
+    }
+  }

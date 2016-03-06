@@ -18,7 +18,7 @@
     <div class="desc"><strong>{{ product.title }}</strong> {{ product.description }}</div>
     </div>
       <div>
-          <button type="submit" class="buyButton" ng-click="products.addToCart(product.title,product.imgsrc,product.price); main.openCart()">
+          <button type="submit" class="buyButton" ng-click="products.addToCart(product.title,product.imgsrc,product.price); main.openCart(); main.cartIsActive = true;">
             <span ng-if="!product.processing">{{ product.price }}</span>
             <span ng-if="product.processing" class="spinner">
             <span class="glyphicon glyphicon-repeat"></span>

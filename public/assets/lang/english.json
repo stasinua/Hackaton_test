@@ -1,0 +1,79 @@
+
+  {
+    "indexhtml": {
+      "menu": {
+        "products": "Products",
+        "addProduct": "Add product",
+        "register": "Register",
+        "login": "Login",
+        "logout": "Logout"
+      },
+      "cart": {
+        "updateCart": "Update Cart",
+        "removeItem": "Remove Item",
+        "submitCart": "Submit Cart",
+        "rejectCart": "Reject Cart"
+      }
+    },
+    "homehtml": {
+      "title": "Welcome to LIKEIT2016 testApp",
+      "preLoginBtn": "Login to Buy products",
+      "loginBtn": "Login",
+      "preRegisterBnt": "Register to Buy products",
+      "registerBnt": "Register",
+      "preIfLoggedInBtn": "Buy products",
+      "ifLoggedInBtn": "View products"
+    },
+    "registerhtml":{
+      "title": "Registration",
+      "name": {
+        "label": "Name",
+        "help": "Min name length is 2 characters"
+      },
+      "username": {
+        "label": "Username",
+        "help": "Min username length is 5 characters"
+      },
+      "password": {
+        "label": "Password",
+        "help": "Min password length is 8 characters"
+      },
+      "submitBtn": "Register"
+    },
+    "loginhtml":{
+      "title": "Login",
+      "username": {
+        "label": "Username"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "submitBtn": "Login"
+    },
+    "newhtml": {
+      "title": "Add new product",
+      "productTitle": {
+        "label": "Title"
+      },
+      "productDescription": {
+        "label": "Description"
+      },
+      "productImgSrc": {
+        "label": "Name of image without extension"
+      },
+      "productPrice": {
+        "label": "price"
+      },
+      "submitBtn": "Add Product"
+    },
+    "allhtml": {
+      "preProducts": {
+        "loading": "Loading Products"
+      },
+      "products":{
+        "more": "More info",
+        "description": "path.to.description",
+        "buyButton": "Buy"
+      }
+    }
+  }

@@ -1,7 +1,26 @@
 angular.module('mainCtrl', ['productService'])
 
-.controller('mainController', function($rootScope, $location, $window, $q, Auth, Product){
+.controller('mainController', function($rootScope, $http, $location, $window, $q, Auth, Product){
   var vm = this;
+  vm.cartIsActive = false;
+
+  //get Language
+  $http.get('/assets/lang/english.json').success(function(data){
+    vm.language = data;
+    console.log(data);
+  });
+
+  vm.getRussian = function(){
+    $http.get('/assets/lang/russian.json').success(function(data){
+      vm.language = data;
+      console.log(data);
+    });
+  };
+  vm.getEnglish = function(){
+    $http.get('/assets/lang/english.json').success(function(data){
+      vm.language = data;
+    });
+  };
 
   //get info if user is logged login
   vm.loggedIn = Auth.isLoggedIn();

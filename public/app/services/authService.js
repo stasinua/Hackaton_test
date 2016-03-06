@@ -94,7 +94,7 @@ angular.module('authService', [])
   interceptorFactory.responseError = function(response){
     if (response.status == 403) {
       AuthToken.setToken();
-      $location.path('/login');
+      $location.path('/home');
     }
     return $q.reject(response);
   };

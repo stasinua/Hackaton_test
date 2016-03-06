@@ -47,15 +47,17 @@
             </div>
             <div id="menu" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-            			<li><a href="/products"><span></span>Products</a></li>
+            			<li><a href="/products"><span></span>{{main.language.indexhtml.menu.products}}</a></li>
             		</ul>
                     <ul class="nav navbar-nav">
-            			<li><a href="/newproduct"><span></span>Add product</a></li>
+            			<li><a href="/newproduct"><span></span>{{main.language.indexhtml.menu.addProduct}}</a></li>
             		</ul>
             		<ul class="nav navbar-nav navbar-right">
-            			<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
-                        <li ng-if="!main.loggedIn"><a href="/register">Register</a></li>
-            			<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+                  <button ng-click="main.getRussian()">Русский</button>
+                  <button ng-click="main.getEnglish()">English</button>
+            			<li ng-if="!main.loggedIn"><a href="/login">{{main.language.indexhtml.menu.login}}</a></li>
+                  <li ng-if="!main.loggedIn"><a href="/register">{{main.language.indexhtml.menu.register}}</a></li>
+            			<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">{{main.language.indexhtml.menu.logout}}</a></li>
             		</ul>
             </div>
     	</div>
@@ -64,24 +66,19 @@
     <div class="cart">
       <!-- CART SECTION  -->
       <ul class="nav navbar-nav">
-        <li><button ng-click="main.openCart()"><span></span>Update cart</button></li>
+        <li><button ng-click="main.openCart()"><span></span>{{main.language.indexhtml.cart.updateCart}}</button></li>
         <li ng-repeat="cartProduct in main.cartProducts track by $index">
           <div>{{cartProduct.title}}</div>
           </br>
           <!-- <li><img ng-src="/assets/img/{{ cartProduct.imgsrc }}"/></li> -->
           <div>{{cartProduct.price}}</div>
-          <button ng-click="main.removeFromCart(this.$index); main.openCart()"><span></span>remove item</button>
+          <button ng-click="main.removeFromCart(this.$index); main.openCart()"><span></span>{{main.language.indexhtml.cart.removeItem}}</button>
           </br>
         </li>
-        <li>Current Total: {{main.totalSum}}</li>
+        <li ng-if="main.cartIsActive">Current Total: {{main.totalSum}}</li>
         <!-- SUBMIT/REJECT CART -->
-        <button ng-if="main.cartIsFilled" ng-click="main.submitCart();"><span></span>Submit cart</button>
-        <button ng-click="main.rejectCart();"><span></span>Reject cart</button>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
-        <li ng-if="!main.loggedIn"><a href="/register">Register</a></li>
-        <li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+        <button ng-if="main.cartIsFilled" ng-click="main.submitCart();"><span></span>{{main.language.indexhtml.cart.submitCart}}</button>
+        <button ng-click="main.rejectCart();"><span></span>{{main.language.indexhtml.cart.rejectCart}}</button>
       </ul>
     </div>
 
