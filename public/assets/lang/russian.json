@@ -4,11 +4,13 @@
       "menu": {
         "products": "Продукты",
         "addProduct": "Добавить Продукт",
+        "aboutus": "Про нас",
         "register": "Регистрация",
         "login": "Вход",
         "logout": "Выход"
       },
       "cart": {
+        "totalSum": "Итого",
         "updateCart": "Обновить корзину",
         "removeItem": "Удалить продукт",
         "submitCart": "Подтвердить заказ",
@@ -56,7 +58,8 @@
         "label": "Название продукта"
       },
       "productDescription": {
-        "label": "Описание продукта"
+        "labeleng": "English description",
+        "labelrus": "Русское описание"
       },
       "productImgSrc": {
         "label": "Имя картинки без расширения"
@@ -73,7 +76,17 @@
       "products":{
         "more": "Подробнее",
         "description": "path.to.description",
-        "buyButton": "Купить"
+        "buyBtn": "Купить"
+      }
+    },
+    "abouthtml": {
+      "title": "О нас",
+      "team": "CodeRed",
+      "aboutus": "Мы команда Javascript энтузиастов. Сделали для вас простое приложение онлайн магазина. Текст написан согласно задания ",
+      "contacts": {
+        "vk1": "https://vk.com/sumastas",
+        "vk2": "https://vk.com/id67129307",
+        "vk3": "https://vk.com/nikolaj_borisenko"
       }
     }
   }

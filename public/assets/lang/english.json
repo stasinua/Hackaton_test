@@ -4,11 +4,13 @@
       "menu": {
         "products": "Products",
         "addProduct": "Add product",
+        "aboutus": "About us",
         "register": "Register",
         "login": "Login",
         "logout": "Logout"
       },
       "cart": {
+        "totalSum": "Current total",
         "updateCart": "Update Cart",
         "removeItem": "Remove Item",
         "submitCart": "Submit Cart",
@@ -20,7 +22,7 @@
       "preLoginBtn": "Login to Buy products",
       "loginBtn": "Login",
       "preRegisterBnt": "Register to Buy products",
-      "registerBnt": "Register",
+      "registerBtn": "Register",
       "preIfLoggedInBtn": "Buy products",
       "ifLoggedInBtn": "View products"
     },
@@ -56,7 +58,8 @@
         "label": "Title"
       },
       "productDescription": {
-        "label": "Description"
+        "labeleng": "English description",
+        "labelrus": "Русское описание"
       },
       "productImgSrc": {
         "label": "Name of image without extension"
@@ -73,7 +76,12 @@
       "products":{
         "more": "More info",
         "description": "path.to.description",
-        "buyButton": "Buy"
+        "buyBtn": "Buy"
       }
+    },
+    "abouthtml": {
+      "title": "About us",
+      "team": "CodeRed",
+      "aboutus": "We are team of Javascript enthuziasts provide a simple shopping application. We write this short about us as described in task"
     }
   }

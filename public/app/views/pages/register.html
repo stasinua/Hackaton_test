@@ -1,36 +1,36 @@
 <div class="row col-sm-6 col-sm-offset-3">
   <div class="jumbotron">
-    <h1>Регистрация</h1>
+    <h1>{{main.language.registerhtml.title}}</h1>
 
     <form name="regForm" ng-submit="register.doRegister()">
 
       <!-- NAME INPUT -->
       <div class="form-group" ng-class="{ 'has-error' : regForm.name.$invalid }">
-        <label>Name</label>
+        <label>{{main.language.registerhtml.name.label}}</label>
         <input type="text" name="name" class="form-control" ng-model="register.registerData.name" ng-minlength="2">
-        <p class="help-block" ng-show="regForm.name.$error.minlength">Min name length is 2 characters.</p>
+        <p class="help-block" ng-show="regForm.name.$error.minlength">{{main.language.registerhtml.name.help}}</p>
       </div>
 
       <!-- USERNAME INPUT -->
       <div class="form-group" ng-class="{ 'has-error' : regForm.username.$invalid }">
-        <label>Username</label>
+        <label>{{main.language.registerhtml.username.label}}</label>
         <input type="text" name="username" class="form-control" ng-model="register.registerData.username" ng-minlength="5">
-        <p class="help-block" ng-show="regForm.username.$error.minlength">Min username length is 5 characters.</p>
+        <p class="help-block" ng-show="regForm.username.$error.minlength">{{main.language.registerhtml.username.help}}</p>
       </div>
 
       <!-- PASSWORD INPUT -->
       <div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid }">
-        <label>Password</label>
+        <label>{{main.language.registerhtml.password.label}}</label>
         <input type="password" name="password" class="form-control" ng-model="register.registerData.password" ng-minlength="8">
-        <p class="help-block" ng-show="regForm.password.$error.minlength">Min password length is 8 characters.</p>
+        <p class="help-block" ng-show="regForm.password.$error.minlength">{{main.language.registerhtml.name.help}}</p>
       </div>
 
       <div class="alert alert-danger" ng-if="register.error">
         {{ register.error }}
       </div>
-      <!-- LOGIN BUTTON -->
+      <!-- REGISTER BUTTON -->
       <button type="submit" class="btn btn-block btn-primary" ng-disabled="!register.registerData.password || !register.registerData.username">
-        <span ng-if="!register.processing">Register</span>
+        <span ng-if="!register.processing">{{main.language.registerhtml.submitBtn}}</span>
         <span ng-if="register.processing" class="spinner">
           <span class="glyphicon glyphicon-repeat"></span>
         </span>

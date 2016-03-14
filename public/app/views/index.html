@@ -35,51 +35,52 @@
   <body ng-app="userApp" ng-controller="mainController as main">
 
     <header>
-    	<div class="navbar navbar-inverse" ng-if="main.loggedIn">
-    	<div class="container">
-    		<div class="navbar-header">
-    			<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-fire text-danger"></span> Rate Machine</a>
-    		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                 </button>
+    <div class="container">
+        <div class="row">
+            <div class="navbar navbar-inverse" ng-if="main.loggedIn">
+                <div class="container">
+                    <div class="navbar-header">
+                       <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-fire text-danger"></span>LIKEIT2016</a>
+
+                    </div>
+                    <div class="navbar-collapse" id="responsive-menu" >
+                            <ul class="nav navbar-nav">
+                                <li><a href="/products"><span></span>{{main.language.indexhtml.menu.products}}</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav">
+                                <li><a href="/newproduct"><span></span>{{main.language.indexhtml.menu.addProduct}}</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav">
+                                <li><a href="/about"><span></span>{{main.language.indexhtml.menu.aboutus}}</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><button class="btn btn-primary" ng-click="main.getRussian(); main.rusDescription = true;">Русский язык</button></li>
+                                <li><button class="btn btn-primary" ng-click="main.getEnglish(); main.rusDescription = false;">English language</button></li>
+                                <li ng-if="!main.loggedIn"><a href="/login">{{main.language.indexhtml.menu.login}}</a></li>
+                                <li ng-if="!main.loggedIn"><a href="/register">{{main.language.indexhtml.menu.register}}</a></li>
+                                <li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">{{main.language.indexhtml.menu.logout}}</a></li>
+                            </ul>
+                    </div>
+                </div>
             </div>
-            <div id="menu" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-            			<li><a href="/products"><span></span>{{main.language.indexhtml.menu.products}}</a></li>
-            		</ul>
-                    <ul class="nav navbar-nav">
-            			<li><a href="/newproduct"><span></span>{{main.language.indexhtml.menu.addProduct}}</a></li>
-            		</ul>
-            		<ul class="nav navbar-nav navbar-right">
-                  <button ng-click="main.getRussian()">Русский</button>
-                  <button ng-click="main.getEnglish()">English</button>
-            			<li ng-if="!main.loggedIn"><a href="/login">{{main.language.indexhtml.menu.login}}</a></li>
-                  <li ng-if="!main.loggedIn"><a href="/register">{{main.language.indexhtml.menu.register}}</a></li>
-            			<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">{{main.language.indexhtml.menu.logout}}</a></li>
-            		</ul>
-            </div>
-    	</div>
-    	</div>
+        </div>
+    </div>
+
     </header>
     <div class="cart">
       <!-- CART SECTION  -->
-      <ul class="nav navbar-nav">
-        <li><button ng-click="main.openCart()"><span></span>{{main.language.indexhtml.cart.updateCart}}</button></li>
-        <li ng-repeat="cartProduct in main.cartProducts track by $index">
-          <div>{{cartProduct.title}}</div>
-          </br>
-          <!-- <li><img ng-src="/assets/img/{{ cartProduct.imgsrc }}"/></li> -->
-          <div>{{cartProduct.price}}</div>
-          <button ng-click="main.removeFromCart(this.$index); main.openCart()"><span></span>{{main.language.indexhtml.cart.removeItem}}</button>
-          </br>
-        </li>
-        <li ng-if="main.cartIsActive">Current Total: {{main.totalSum}}</li>
-        <!-- SUBMIT/REJECT CART -->
-        <button ng-if="main.cartIsFilled" ng-click="main.submitCart();"><span></span>{{main.language.indexhtml.cart.submitCart}}</button>
-        <button ng-click="main.rejectCart();"><span></span>{{main.language.indexhtml.cart.rejectCart}}</button>
-      </ul>
+      <div class="nav navbar-nav">
+            <li ng-repeat="cartProduct in main.cartProducts track by $index">
+                <div> <img style="border="0" height="20" width="20"" ng-src="/assets/img/{{ cartProduct.imgsrc }}.jpg"/> {{cartProduct.title}} - {{cartProduct.price}}
+                <button style="background: #ffffff; border: 0px; margin-right: 20px; " ng-click="main.removeFromCart(this.$index); main.openCart()"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+            </li>
+            <div style="padding: 10px;" ng-if="main.cartIsActive">
+              <button class="btn btn-danger" ng-click="main.submitCart(); main.cartIsActive = false;"><span></span>{{main.language.indexhtml.cart.submitCart}}</button>
+              <button style="background: #ffffff; border: 0px; margin-right:10px; margin-left:10px;" ng-click="main.openCart()"><span class="glyphicon glyphicon-refresh"></span ></button>{{main.language.indexhtml.cart.totalSum}} : {{main.totalSum}}
+              <button  style="background: #ffffff; border: 0px; margin-right:10px; margin-left:10px; "ng-click="main.rejectCart(); main.cartIsActive = true;"><span class="glyphicon glyphicon-eject"></span></button>
+            </div>
+      </div>
     </div>
 
     <main class="container">

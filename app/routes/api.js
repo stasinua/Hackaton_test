@@ -219,7 +219,8 @@ module.exports = function(app,express){
   .post(function(req,res){
       var product = new Product();
       product.title = req.body.title;
-      product.description = req.body.description;
+      product.engdescription = req.body.engdescription;
+      product.rusdescription = req.body.rusdescription;
       product.imgsrc = req.body.imgsrc;
       product.price = req.body.price;
 

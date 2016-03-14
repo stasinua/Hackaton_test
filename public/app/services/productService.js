@@ -8,10 +8,11 @@ angular.module('productService', [])
     return $http.get('api/products');
   };
 
-  productFactory.addProduct = function(title,description,imgsrc,price){
+  productFactory.addProduct = function(title, engdescription, rusdescription, imgsrc, price){
     return $http.post('api/products', {
       title: title,
-      description: description,
+      engdescription: engdescription,
+      rusdescription: rusdescription,
       imgsrc: imgsrc,
       price: price
     })
@@ -23,7 +24,7 @@ angular.module('productService', [])
 
   //Cart section
   productFactory.cartProducts = [];
-  
+
   //Add product
   productFactory.addToCart = function(title,imgsrc,price){
     console.log("service normal");
@@ -68,10 +69,12 @@ angular.module('productService', [])
       user: user
     });
     $window.localStorage.removeItem('cartProducts');
+    productFactory.cartProducts = [];
   };
   //rejectCart
   productFactory.rejectCart = function(){
     $window.localStorage.removeItem('cartProducts');
+    productFactory.cartProducts = [];
   };
 
 

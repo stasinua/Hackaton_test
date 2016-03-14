@@ -1,30 +1,35 @@
 <div class="row col-sm-6 col-sm-offset-3">
   <div class="jumbotron">
-    <h2>Add new product</h2>
+    <h2>{{main.language.newhtml.title}}</h2>
 
     <form name="regForm" ng-submit="product.addProduct()">
 
       <!-- TITLE INPUT -->
       <div class="form-group">
-        <label>Title</label>
+        <label>{{main.language.newhtml.productTitle.label}}</label>
         <input type="text" name="title" class="form-control" ng-model="product.productData.title">
       </div>
 
       <!-- DESCRIPTION INPUT -->
       <div class="form-group">
-        <label>Description</label>
-        <input type="text" name="description" class="form-control" ng-model="product.productData.description">
+        <label>{{main.language.newhtml.productDescription.labeleng}}</label>
+        <input type="text" name="engdescription" class="form-control" ng-model="product.productData.engdescription">
+      </div>
+
+      <div class="form-group">
+        <label>{{main.language.newhtml.productDescription.labelrus}}</label>
+        <input type="text" name="rusdescription" class="form-control" ng-model="product.productData.rusdescription">
       </div>
 
       <!-- IMGSRC INPUT -->
       <div class="form-group">
-        <label>Image source</label>
+        <label>{{main.language.newhtml.productImgSrc.label}}</label>
         <input type="text" name="imgsrc" class="form-control" ng-model="product.productData.imgsrc">
       </div>
 
       <!-- PRICE INPUT -->
       <div class="form-group">
-        <label>Price</label>
+        <label>{{main.language.newhtml.productPrice.label}}</label>
         <input type="text" name="description" class="form-control" ng-model="product.productData.price">
       </div>
 
@@ -33,7 +38,7 @@
       </div>
       <!-- ADD BUTTON -->
       <button type="submit" class="btn btn-block btn-primary">
-        <span ng-if="!product.processing">Add Product</span>
+        <span ng-if="!product.processing">{{main.language.newhtml.submitBtn}}</span>
         <span ng-if="product.processing" class="spinner">
           <span class="glyphicon glyphicon-repeat"></span>
         </span>

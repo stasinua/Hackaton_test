@@ -5,7 +5,7 @@
 <!-- LOADING MESSAGE -->
 <div class="jumbotron text-center" ng-show="products.processing">
   <span class="glyphicon glyphicon-repeat spinner"></span>
-  <p>Loading Products...</p>
+  <p>{{main.language.allhtml.preProducts.loading}}</p>
 </div>
 
 <!-- LOOP OVER THE PRODUCTS -->
@@ -13,30 +13,18 @@
   <div class="col-sm-6"  id="shop">
     <div class="productTitle">{{ product.title }}</div>
     <div class="blogodel">
-          <img border="0" height="300" width="289" ng-src="/assets/img/{{ product.imgsrc }}"/>
-    <div class="more">» Подробнее</div>
-    <div class="desc"><strong>{{ product.title }}</strong> {{ product.description }}</div>
+          <img border="0" height="300" width="289" ng-src="/assets/img/{{ product.imgsrc }}.jpg"/>
+    <div class="more">» {{main.language.allhtml.products.more}}</div>
+    <div class="desc" ng-if="!main.rusDescription"><strong>{{ product.title }}</strong> {{ product.engdescription }}</div>
+    <div class="desc" ng-if="main.rusDescription"><strong>{{ product.title }}</strong> {{ product.rusdescription }}</div>
     </div>
       <div>
-          <button type="submit" class="buyButton" ng-click="products.addToCart(product.title,product.imgsrc,product.price); main.openCart(); main.cartIsActive = true;">
+          <button type="submit" class="btn btn-danger" ng-click="products.addToCart(product.title,product.imgsrc,product.price); main.openCart(); main.cartIsActive = true;">{{main.language.allhtml.products.buyBtn}}</button>
             <span ng-if="!product.processing">{{ product.price }}</span>
             <span ng-if="product.processing" class="spinner">
             <span class="glyphicon glyphicon-repeat"></span>
             </span>
           </button>
-
-         <dl class="star-rating">
-            <li class="current" style="width:80px"><a href="#" class="star4">Хорошо</a></li>
-              <dd>
-                 <ol>
-                    <li><a href="#" class="star1">Ужасно</a></li>
-                    <li><a href="#" class="star2">Плохо</a></li>
-                    <li><a href="#" class="star3">Нормально</a></li>
-                    <li><a href="#" class="star4">Хорошо</a></li>
-                    <li><a href="#" class="star5">Отлично</a></li>
-                  </ol>
-              </dd>
-          </dl>
       </div>
   </div>
 </div>

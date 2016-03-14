@@ -1,19 +1,17 @@
 angular.module('mainCtrl', ['productService'])
 
-.controller('mainController', function($rootScope, $http, $location, $window, $q, Auth, Product){
+.controller('mainController', function($rootScope, $location, $window, $http, $q, Auth, Product){
   var vm = this;
-  vm.cartIsActive = false;
 
-  //get Language
+  //Languge section
+  //vm.rusDescription = false;
   $http.get('/assets/lang/english.json').success(function(data){
     vm.language = data;
-    console.log(data);
   });
 
   vm.getRussian = function(){
     $http.get('/assets/lang/russian.json').success(function(data){
       vm.language = data;
-      console.log(data);
     });
   };
   vm.getEnglish = function(){
@@ -75,6 +73,7 @@ angular.module('mainCtrl', ['productService'])
 
   //Cart section
   vm.totalSum = 0;
+  vm.cartIsActive = false;
   vm.openCart = function(){
     var storageCartProducts = $window.localStorage.getItem('cartProducts');
     if (storageCartProducts === null) {
@@ -94,11 +93,17 @@ angular.module('mainCtrl', ['productService'])
 
   vm.submitCart = function(){
     Product.submitCart(vm.cartProducts, vm.totalSum, vm.user);
+    vm.cartIsActive = false;
+    $window.localStorage.removeItem('cartProducts');
+    vm.cartProducts = [];
   };
 
   vm.rejectCart = function(){
     Product.rejectCart();
     vm.totalSum = 0;
+    vm.cartIsActive = false;
+    $window.localStorage.removeItem('cartProducts');
+    vm.cartProducts = [];
   };
 
 

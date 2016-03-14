@@ -12,7 +12,7 @@ angular.module('productCtrl', ['productService'])
 
   vm.addProduct = function(){
     vm.processing = true;
-    Product.addProduct(vm.productData.title, vm.productData.description, vm.productData.imgsrc, vm.productData.price)
+    Product.addProduct(vm.productData.title, vm.productData.engdescription, vm.productData.rusdescription, vm.productData.imgsrc, vm.productData.price)
     .success(function(data){
       vm.processing = false;
       if (data.success) {
