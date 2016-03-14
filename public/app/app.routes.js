@@ -25,6 +25,11 @@ angular.module('app.routes', ['ngRoute'])
     controller: 'productController',
     controllerAs: 'products'
   })
+  .when('/about', {
+    templateUrl: '/app/views/pages/about.html',
+    controller: 'productController',
+    controllerAs: 'about'
+  })
   .when('/users/create', {
     templateUrl: 'app/views/pages/users/single.html',
     controller: 'userCreateController',
